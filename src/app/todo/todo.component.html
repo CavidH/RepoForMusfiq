@@ -1,0 +1,28 @@
+<div class="container card-container mt-5">
+  <div class="container example-container d-flex mt-4">
+    <form [formGroup]="frmGroup" style="display: flex; flex-direction: column;">
+      <mat-form-field>
+        <mat-label>Enter todo title</mat-label>
+        <input matInput required formControlName="title">
+        <mat-error *ngIf="frmGroup.get('title')?.hasError('required')">You must enter title</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Enter todo text</mat-label>
+        <input matInput required formControlName="body">
+        <mat-error *ngIf="frmGroup.get('body')?.hasError('required')">You must enter content</mat-error>
+      </mat-form-field>
+    </form>
+  </div>
+
+  <a mat-raised-button style="background: green;
+                              color: white;
+                              text-decoration: none" (click)="addTodo()" class="mt-3">ADD TODO</a>
+  <div class="todo-card" *ngFor="let todo of todos">
+    <div class="title">{{todo.title}}</div>
+    <div class="action"><button (click)="deleteTodo(todo.id)" style="padding-right: 10px;background: darkred;color: white" mat-raised-button><mat-icon>clear</mat-icon>
+    </button> </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
+
+<!--<button mat-raised-button (click)="openDialog()">Open dialog</button>-->

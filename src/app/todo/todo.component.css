@@ -1,0 +1,40 @@
+.row{
+  background: lightgray;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+}
+.card-container{
+  height: 50vh;
+  overflow-x: auto;
+  border-radius: 8px;
+
+  box-shadow:  20px 20px 60px #bebebe,
+  -20px -20px 60px #ffffff;
+}
+.todo-card{
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(191, 191, 191, 0.77);
+display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6vh;
+
+  padding: 10px;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+
+.card-container::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+.card-container::-webkit-scrollbar-track {
+  background:  rgb(48, 215, 48);         /* color of the tracking area */
+}
+
+.card-container::-webkit-scrollbar-thumb {
+  background-color: blue;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: rgb(48, 215, 48);  /* creates padding around scroll thumb */
+}
